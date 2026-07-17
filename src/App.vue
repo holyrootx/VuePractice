@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    {{ message }}
+    {{ this.message }}
   </div>
 </template>
 
@@ -12,21 +12,23 @@ export default {
       message : "MESSAGE !!!!",
     }
   },
-  beforeCreate: () => {console.log(`beforeCreate`);},
-  created: () => {console.log(`created`);},
-  mounted: () => {console.log(`mounted`);},
-  updated: () => {console.log(`updated`);},
+  beforeCreate() {
+    console.log(`beforeCreate`);
+  },
+  created() {
+    console.log(`created`);
+  },
+  mounted()  {
+    console.log(`mounted`);
+    this.message = 'Hello Vue!!!'; // message의 값을 변경한다. 
+  },
+  updated() {
+    console.log(`updated`);
+  },
     
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
