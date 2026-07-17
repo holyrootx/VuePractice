@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    {{ this.message }}
-    <HiPage></HiPage>
+    {{ message }}
+    <HiPage :localId="localId"></HiPage>
   </div>
 </template>
 
@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       message : "MESSAGE !!!!",
+      localId : "52676",
     }
   },
   beforeCreate() {
