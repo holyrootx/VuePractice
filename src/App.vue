@@ -2,11 +2,21 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     {{ this.message }}
+    <HiPage></HiPage>
   </div>
 </template>
 
 <script>
+import HiPage from './components/HiPage.vue';
+
+
+
 export default {
+
+  components : {
+    HiPage,
+  },
+
   data() {
     return {
       message : "MESSAGE !!!!",
