@@ -3,18 +3,20 @@
     <img alt="Vue logo" src="./assets/logo.png">
     {{ message }}
     <HiPage :localId="localId"></HiPage>
+    <UserListPage></UserListPage>
   </div>
 </template>
 
 <script>
 import HiPage from './components/HiPage.vue';
-
+import UserListPage from './components/UserListPage.vue';
 
 
 export default {
 
   components : {
     HiPage,
+    UserListPage,
   },
 
   data() {
