@@ -1,18 +1,22 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{ message }}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      message : "MESSAGE !!!!",
+    }
+  },
+  beforeCreate: () => {console.log(`beforeCreate`);},
+  created: () => {console.log(`created`);},
+  mounted: () => {console.log(`mounted`);},
+  updated: () => {console.log(`updated`);},
+    
 }
 </script>
 
