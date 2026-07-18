@@ -8,7 +8,8 @@
       v-model="memoContent"
       @clear-memo="clearMemo"
     />
-    <EmployeeFilterLesson />
+    <EmployeeFilterLesson/>
+    <DistrictLoadLesson/>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import HiPage from './components/HiPage.vue';
 import UserListPage from './components/UserListPage.vue';
 import MemoDraftLesson from './views/MemoDraftLesson.vue';
 import EmployeeFilterLesson from './views/EmployeeFilterLesson.vue';
+import DistrictLoadLesson from './views/DistrictLoadLesson.vue';
 
 export default {
 
@@ -24,7 +26,8 @@ export default {
     HiPage,
     UserListPage,
     MemoDraftLesson,
-    EmployeeFilterLesson
+    EmployeeFilterLesson,
+    DistrictLoadLesson,
 
   },
 
