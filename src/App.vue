@@ -6,9 +6,9 @@
     <UserListPage></UserListPage>
     <MemoDraftLesson
       v-model="memoContent"
-      
       @clear-memo="clearMemo"
     />
+    <EmployeeFilterLesson />
   </div>
 </template>
 
@@ -16,6 +16,7 @@
 import HiPage from './components/HiPage.vue';
 import UserListPage from './components/UserListPage.vue';
 import MemoDraftLesson from './views/MemoDraftLesson.vue';
+import EmployeeFilterLesson from './views/EmployeeFilterLesson.vue';
 
 export default {
 
@@ -23,6 +24,7 @@ export default {
     HiPage,
     UserListPage,
     MemoDraftLesson,
+    EmployeeFilterLesson
 
   },
 
