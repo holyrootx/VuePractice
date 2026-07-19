@@ -1,71 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    {{ message }}
-    <HiPage :localId="localId"></HiPage>
-    <UserListPage></UserListPage>
-    <MemoDraftLesson
-      v-model="memoContent"
-      @clear-memo="clearMemo"
-    />
-    <EmployeeFilterLesson/>
-    <DistrictLoadLesson/>
+    <header>
+      <h1>관리자 시스템</h1>
+    </header>
+
+    <div class="admin-layout">
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <router-link
+                :to="{ name: 'dashboard' }"
+              >
+                대시보드
+              </router-link>
+            </li>
+
+            <li>
+              <router-link
+                :to="{ name: 'customer-list' }"
+              >
+                고객 관리
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <!-- URL에 연결된 화면이 이 자리에 표시됨 -->
+        <router-view />
+      </main>
+    </div>
   </div>
 </template>
 
 <script>
-import HiPage from './components/HiPage.vue';
-import UserListPage from './components/UserListPage.vue';
-import MemoDraftLesson from './views/MemoDraftLesson.vue';
-import EmployeeFilterLesson from './views/EmployeeFilterLesson.vue';
-import DistrictLoadLesson from './views/DistrictLoadLesson.vue';
-
 export default {
-
-  components : {
-    HiPage,
-    UserListPage,
-    MemoDraftLesson,
-    EmployeeFilterLesson,
-    DistrictLoadLesson,
-
-  },
-
-  data() {
-    return {
-      message : "MESSAGE !!!!",
-      localId : "52676",
-      memoContent : "",
-    }
-  },
-
-  beforeCreate() {
-    console.log(`beforeCreate`);
-  },
-  created() {
-    console.log(`created`);
-  },
-  mounted()  {
-    console.log(`mounted`);
-    this.message = 'Hello Vue!!!'; // message의 값을 변경한다. 
-  },
-  updated() {
-    console.log(`updated`);
-  },
-  methods : {
-    clearMemo() {
-      this.memoContent = "";
-      console.log("부모에서 이벤트 전파 확인 후 clearMemo메서드 실행");
-    },
-    changeMemo(newValue) {
-      this.memoContent = newValue;
-      console.log(newValue);
-    }
-  }
-    
-}
+  name: 'App'
+};
 </script>
 
-<style>
+<style scoped>
+.admin-layout {
+  display: flex;
+  gap: 24px;
+}
 
+aside {
+  width: 200px;
+}
+
+main {
+  flex: 1;
+}
 </style>
